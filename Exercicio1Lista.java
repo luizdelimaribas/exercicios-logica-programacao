@@ -1,28 +1,36 @@
 //Leia 10 números inteiros em um array e exiba-os na ordem inversa.
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Exercicio1Lista {
-public static void main(String args[]){
- Scanner sc = new Scanner(System.in);
+class Exercicio1Lista{
+   public static void main(String args[]){
 
- int[] numeros  = new int[10];
+   Scanner sc = new Scanner(System.in);
+ArrayList<Integer> numeros = new ArrayList<>();
+
+//quantidade de numeros a serem lidos
+System.out.println("Quantos numeros deseja?");
+ int quantidade = sc.nextInt();
+
+ //Leia 10 números ou mais inteiros
+System.out.println("Digite os numeros:");
+  for(int j = 0 ; j < quantidade; j ++){
+      int numero = sc.nextInt();
+      numeros.add(numero);
+  }
+
+ System.out.println(numeros.size() + " numeros digitados:");
  
+ //exiba-os na ordem
+ System.out.println(numeros);
 
- //Leia 10 números inteiros
- System.out.println("Digite a seguencia de 10 numeros: ");
- for(int i = 0; i < 10; i++){
-    System.out.println("Numero " + (i + 1) + ": ");
-    numeros[i] = sc.nextInt();
- }
+ // exiba-os na ordem inversa.
+   System.out.println("Numeros na ordem inversa:");
+   for(int i = numeros.size() - 1; i >= 0; i--){
+       System.out.print(numeros.get(i) + " ");
+   }
 
- System.out.println("Os numeros são: ");
- for(int numero : numeros){
-    System.out.print(numero + " - ");
- }
- 
-
- sc.close();
+sc.close();
 }
-    
 }
