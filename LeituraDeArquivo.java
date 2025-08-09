@@ -13,7 +13,7 @@ public class LeituraDeArquivo {
  while ((linha = arquivo.readLine()) != null) {
     System.out.println(linha);
  }
-}
+ }
  catch(IOException e){
     System.err.println("Erro ao ler o arquivo: " + e.getMessage());
  }
